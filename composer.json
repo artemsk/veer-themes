@@ -1,0 +1,11 @@
+{
+    "name": "artemsk/veer-themes",
+    "description": "Veer Themes.",
+    "authors": [
+        {
+            "name": "Artyom Troshin",
+            "email": "garcia82@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable"
+}
