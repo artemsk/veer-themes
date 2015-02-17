@@ -81,48 +81,28 @@
             </section>
         </div>
 		-->
+@if( count(data_get($data, 'function.indexCornersDigest.data.items')) > 0 )		
         <div class="row">
             <div class="col-sm-22 col-sm-offset-1">  
                 <div class="row bolshaya-content-row">
-                    <div class="col-sm-22"><strong>DIGEST / CATEGORY</strong>
+                    <div class="col-sm-22 digest-title"><strong>{{ data_get($data, 'function.indexCornersDigest.data.tagName', 'Digest') }}</strong>
                     </div>
                 </div>
                 <div class="row bolshaya-content-half-row">
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-sm clearfix"></div>
-                    <div class="visible-xs visible-sm bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
-                    <div class="visible-xs bolshaya-content-row"></div>
-                    <div class="col-sm-6 col-md-3"><img data-src="holder.js/100%x153">
-                        <br/><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</small>
-                    </div>
+@foreach(data_get($data, 'function.indexCornersDigest.data.items') as $key => $item)				
+@if($key == 4) 
+			<div class="visible-sm clearfix"></div>
+			<div class="visible-xs visible-sm bolshaya-content-row"></div>
+@endif
+@if($key != 0 && $key != 4)
+			<div class="visible-xs bolshaya-content-row"></div>
+@endif
+			@include($template . '.types.digest', array('data' => $item))
+@endforeach
                 </div>
             </div>
         </div>
+@endif
         <div class="row bolshaya-content-row footer">
             <div class="col-md-3 col-sm-5 col-sm-offset-1">18+
                 <br> © 2015 www.bolshaya.net
@@ -134,7 +114,7 @@
             </div>
             <div class="visible-xs bolshaya-content-half-row"></div>
             <div class="col-md-11 col-sm-12"><strong>ABOUT</strong>
-                <br>{{ db_parameter('SITE_FOOTER_AD') }}
+                <br>{{ db_parameter('SITE_FOOTER') }}
             </div>
             <div class="visible-sm clearfix"></div>
             <div class="visible-xs visible-sm bolshaya-content-half-row"></div>
