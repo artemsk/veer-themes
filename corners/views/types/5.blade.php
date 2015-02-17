@@ -8,9 +8,17 @@
 	</div>
 	<div class="row bolshaya-content-row">
 		<div class="col-sm-24 text-center">
+			@if(isset($data->images) && count($data->images)>0)
+			<a href="{{ route('page.show', $data->id) }}">
+				<img src="{{ asset(config('veer.images_path').'/'.$data->images[0]->img) }}" class="img-responsive img-rounded type-5-image">
+			</a>
+			@else
 			<img data-src="holder.js/100%x280/text:Type 5" class="img-responsive img-rounded type-5-image">
-			<span class="type-5-category">CATEGORIES / SUB-CATEGORIES</span>
-			<h3 class="type-5-title">Type 5 with round corners and bigger font</h3>
+			@endif			
+			<span class="type-5-category">
+				{{ data_get($data, 'categories.0.title') }} {{ data_get($data, 'categories.1.title') }} 
+				</span>
+			<h3 class="type-5-title">{{ $data->title or 'Title' }}</h3>
 		</div>
 	</div>
 </div>
