@@ -306,3 +306,20 @@ h3 > .thinner {
     line-height: 11px;
     padding: 10px;
 }
+
+.show-more > a {
+    text-transform: uppercase;
+    color: #222;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.show-more > a:hover {
+    color: #222;
+    text-decoration: none;
+}
+
+.show-more:hover {
+    background-color: #ccc;
+}

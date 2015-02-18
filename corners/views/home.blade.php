@@ -34,8 +34,8 @@
                 </div>
             </div>
         </div>
-        <div class="row hero-content">
-            <div class="col-sm-22 col-sm-offset-1">
+        <div class="row bolshaya-content-row"> <!-- hero-content -->
+            <!--<div class="col-sm-22 col-sm-offset-1">
                 <div class="row">
                     <div class="col-sm-8"><img data-src="holder.js/100%x211/#ccc:#000/text:A" class="img-responsive">
                     </div>
@@ -48,20 +48,17 @@
                         <img data-src="holder.js/100%x211/#ccc:#000/text:C" class="img-responsive">
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
         <span id="intro-bottom-mark"></span>
     </div>
     <div class="container-fluid bolshaya-main-content bolshaya-background-white">
         <div class="row">
             <div class="col-sm-22 col-sm-offset-1">
-@include($template . '.layout.list-of-pages', array('data' => $data, 'template' => $template))	
+@if( count(data_get($data, 'function.indexCornersPages.data.gridSort')) > 0 )				
+	@include($template . '.layout.pages-list', array('data' => $data))
+@endif				
 
-				<div class="row bolshaya-content-row">
-					<div class="col-sm-6 col-sm-offset-9 col-xs-22 col-xs-offset-1 text-center show-more">
-						More
-					</div>
-				</div>
 				<!--
                 <div class="row bolshaya-content-row">
 					<div class="col-sm-24">
@@ -103,29 +100,7 @@
             </div>
         </div>
 @endif
-        <div class="row bolshaya-content-row footer">
-            <div class="col-md-3 col-sm-5 col-sm-offset-1">18+
-                <br> © 2015 www.bolshaya.net
-                <br> Corners Theme
-                <br> Made for Veer
-            </div>
-            <div class="visible-xs bolshaya-content-half-row"></div>
-            <div class="col-md-2 col-sm-5"><img data-src="holder.js/100%x123/sky">
-            </div>
-            <div class="visible-xs bolshaya-content-half-row"></div>
-            <div class="col-md-11 col-sm-12"><strong>ABOUT</strong>
-                <br>{{ db_parameter('SITE_FOOTER') }}
-            </div>
-            <div class="visible-sm clearfix"></div>
-            <div class="visible-xs visible-sm bolshaya-content-half-row"></div>
-            <div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0">Newsletter
-                <br>Contacts
-                </div>
-            <div class="visible-xs bolshaya-content-half-row"></div>
-            <div class="col-md-3 col-sm-11">Twitter
-                <br>Facebook</div>
-        </div>
-    </div>             
+	</div>             
 
     <div class="sidebar">*</div>
 

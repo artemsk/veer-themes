@@ -79,5 +79,3 @@ function turningOnOffParallax() {
 
 $(window).ready(turningOnOffParallax);
 //$(window).resize(turningOnOffParallax);
-
-

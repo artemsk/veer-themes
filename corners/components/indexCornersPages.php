@@ -25,7 +25,7 @@ class indexCornersPages {
 		$e = $this->getHomeEntities('\Veer\Models\Page', app('veer')->siteId, db_parameter('CATEGORY_HOME'))
 			->with('attributes', 'user')
 			->select('id', 'title', 'small_txt', 'views', 'created_at', 'users_id')
-			->orderBy('manual_order', 'asc')->paginate($this->itemsPerPage);
+			->orderBy('manual_order', 'asc')->simplePaginate($this->itemsPerPage);
 
 		if(count($e) <= 0) return null;
 		
@@ -34,6 +34,8 @@ class indexCornersPages {
 		if($this->autoSort) $this->makeGrid();
 		
 		$this->data['gridSort'] = array_get($this->working_data, 'makeRow');
+		
+		if(app('request')->ajax()) $this->earlyResponse();
     }    
     
 	/* get grid attributes of items */
@@ -110,19 +112,16 @@ class indexCornersPages {
 		$this->currentRow = $this->currentRow + 1;
 	}
 	
-}
-
-/*
- * 	seed temporarely 
- * 
-	for($j = 0; $j <= 55; $j++)
+	/* send response for ajax requests */
+	protected function earlyResponse()
 	{
-		$this->data['full'][] = rand(0, 1) == 1 ? 6 : 12;
+		app('veer')->forceEarlyResponse = true;
+		
+		$data2view['data']['function']['indexCornersPages']['data'] = $this->data;
+		$data2view['template'] = app('veer')->template;
+		$data2view['loadScripts'] = true;
+		
+		app('veer')->earlyResponseContainer = view(app('veer')->template . ".layout.pages-list", $data2view);
 	}
 	
-	foreach($this->data['full'] as $key => $value)
-	{
-		if($value == 6) $this->data['only6'][$key] = $key;
-	}
- * 
- */
+}
