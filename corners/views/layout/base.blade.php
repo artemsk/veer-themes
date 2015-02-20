@@ -13,6 +13,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/dist20/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/index.css') }}">
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -24,47 +25,51 @@
   </head>
   <body>
 
+    <div class="fixed-header">
+        <div class="row top-background-line"></div>
+        <div class="container-fluid bolshaya-white-panel">
+            <div class="row">
+                <div class="col-sm-22 col-sm-offset-1 text-center">
+                    <i class="fa fa-bars sidebar-menu"></i><span class="logo-header"><a href="{{ app('veer')->siteUrl }}">{{ db_parameter('SITE_TITLE', 'Corners') }}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+	  
 	@yield('body')
-  
-	<div class="container-fluid bolshaya-main-content bolshaya-background-white">
-	<div class="row bolshaya-content-row footer">
-		<div class="col-md-3 col-sm-5 col-sm-offset-1">18+
-			<br> © 2015 www.bolshaya.net
-			<br> Corners Theme
-			<br> Made for Veer
-		</div>
-		<div class="visible-xs bolshaya-content-half-row"></div>
-		<div class="col-md-2 col-sm-5"><img data-src="holder.js/100%x123/sky">
-		</div>
-		<div class="visible-xs bolshaya-content-half-row"></div>
-		<div class="col-md-11 col-sm-12"><strong>ABOUT</strong>
-			<br>{{ db_parameter('SITE_FOOTER') }}
-		</div>
-		<div class="visible-sm clearfix"></div>
-		<div class="visible-xs visible-sm bolshaya-content-half-row"></div>
-		<div class="col-md-3 col-sm-10 col-sm-offset-1 col-md-offset-0">Newsletter
-			<br>Contacts
-		</div>
-		<div class="visible-xs bolshaya-content-half-row"></div>
-		<div class="col-md-3 col-sm-11">Twitter
-			<br>Facebook
-		<br><br>
-		<small>powered by <strong>Veer.</strong>
-			<br>
-			{ {{ array_get(app('veer')->statistics, 'loading') }}
-			{{ array_get(app('veer')->statistics, 'memory') }} }</small>
+  	
+	<div class="sidebar">
+		<img data-src="holder.js/75x75/vine" class="img-circle">
+           
+		<p class="extra-margin phone-header">+7 (919) 760-06-74</p>
+		<p><a href="mailto:work@bolshaya.net">work@bolshaya.net</a></p>
+
+		<div class="bolshaya-categories">
+			<p class="extra-margin"><a href="{{ app('veer')->siteUrl }}">Home</a></p>
+			@if(count( data_get($data, 'function.globalCornersSidebar.data.categories') )>0)
+				@foreach( data_get($data, 'function.globalCornersSidebar.data.categories') as $category_id => $title)
+					<p><a href="{{ route('category.show', array('id'=>$category_id)) }}">{{ $title }}</a></p>
+				@endforeach
+			@endif
+			<p class="extra-margin"><a href="http://www.twitter.com/BolshayaNet" target="_blank">Twitter</a></p>
+			<p><a href="http://www.facebook.com/bolshaya.net" target="_blank">Facebook</a></p>		
 		</div>
 	</div>
-	</div>
+
+    <div class="overlay"></div>
 	
-	{{ empty($veer_message_center) ? null : $veer_message_center }}
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/jquery.min.js') }}"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{ asset(config('veer.assets_path').'/'.$template.'/dist20/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/holder.js') }}"></script>
-    <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr.min.js') }}"></script>
-    <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/index.js') }}"></script>
+	@if(!empty($data['veer_message_center']))
+	<div class="events-veer-message-center">{{ head($data['veer_message_center']) }}</div>
+	@endif
+	
+	@section('javascript-plugins')
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/jquery.min.js') }}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/dist20/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/holder.js') }}"></script>
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/index.js') }}"></script>
 	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/showmore.js') }}"></script>
+	@show
   </body>
 </html>

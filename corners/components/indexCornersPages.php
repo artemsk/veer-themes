@@ -14,6 +14,8 @@ class indexCornersPages {
 	public $autoSort = true;
 
 	/* */
+	protected $category;
+	
 	protected $sumRow = 0;
 	
 	protected $currentRow = 0;
@@ -22,9 +24,22 @@ class indexCornersPages {
 	
     public function __construct() {
         
-		$e = $this->getHomeEntities('\Veer\Models\Page', app('veer')->siteId, db_parameter('CATEGORY_HOME'))
+		$this->category = db_parameter('CATEGORY_HOME');
+		
+		if(starts_with("index", \Route::currentRouteName())) $this->createListOfPages();
+    }    
+    
+	public function setCategory($category)
+	{
+		$this->category = $category;
+	}
+	
+	/* create list of pages */
+	public function createListOfPages()
+	{
+		$e = $this->getHomeEntities('\Veer\Models\Page', app('veer')->siteId, $this->category)
 			->with('attributes', 'user')
-			->select('id', 'title', 'small_txt', 'views', 'created_at', 'users_id')
+			->select('id', 'url', 'title', 'small_txt', 'views', 'created_at', 'users_id')
 			->orderBy('manual_order', 'asc')->simplePaginate($this->itemsPerPage);
 
 		if(count($e) <= 0) return null;
@@ -36,8 +51,8 @@ class indexCornersPages {
 		$this->data['gridSort'] = array_get($this->working_data, 'makeRow');
 		
 		if(app('request')->ajax()) $this->earlyResponse();
-    }    
-    
+	}
+	
 	/* get grid attributes of items */
 	protected function getAttributes($e)
 	{
@@ -50,13 +65,15 @@ class indexCornersPages {
 			if($this->working_data['full'][$key] == 6) $this->working_data['only6'][$key] = $key;
 			
 			$item->designType = array_get($itemParams, 'designType', $this->default_type);
+			
+			$item->bgColor = array_get($itemParams, 'bgColor');
 		}
 		
 		return $e;
 	}
 	
 	/* create 24-grid of 6 & 12 elements */
-	public function makeGrid()
+	protected function makeGrid()
 	{ 
 		a:
 		reset($this->working_data['full']);	
@@ -99,6 +116,7 @@ class indexCornersPages {
 		{
 			$this->working_data['makeRow'][$this->currentRow][] = $take6;
 			array_pull($this->working_data['only6'], $take6);
+			array_pull($this->working_data['full'], $take6);
 		}
 
 		$this->nextRow();

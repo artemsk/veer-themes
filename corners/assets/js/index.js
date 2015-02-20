@@ -31,18 +31,19 @@ $(".fold-header").click(function() {
 });
 
 
-$(".logo-header").click(function(event) {
+$(".sidebar-menu").click(function(event) {
     event.stopPropagation(event);
-    $(".sidebar").animate({left:"0px"},250);
+    $(".sidebar").show().animate({left:"0px"},250);
     $(".overlay").show();
     $(".overlay").animate({opacity:"0.74902"},250);
 });
 
-$('html').click(function() {
-    $(".sidebar").animate({left:"-220px"},250);
+$('.overlay').click(function() {
+    $(".sidebar").animate({left:"-270px"},250);
     setTimeout(function() {
            $(".overlay").animate({opacity:"0"},250);
            $(".overlay").hide();
+           $(".sidebar").hide();
         }, 250);
 });
 
@@ -56,26 +57,20 @@ $(".contact-form button").click(function() {
 
 //;
 
-var s = skrollr.init({forceHeight: false});
+$(document).ready(function() { 
+    if ($(".events-veer-message-center").show().length > 0) {
+        $(".events-veer-message-center").addClass('animated').addClass('flipInX');
 
-function turningOnOffParallax() {
-    
-    var heroBottom = $('.bolshaya-main-content').offset().top;
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    if (docViewBottom >= heroBottom && docViewTop <= heroBottom) {
-        $('.intro').css('position', 'fixed');
-        $('.intro').css('width', '100%');
-        $('.bolshaya-main-content').css('position', 'relative');
-        $('.bolshaya-main-content').css('top', heroBottom);
-    } else {
-        var s = skrollr.init({forceHeight: false}).destroy();
-        $('.intro').removeAttr('style').removeAttr('data-top').removeAttr('data-top-bottom');
-        $('.intro').removeClass('skrollable').removeClass('skrollable-after');   
-        var s = skrollr.init({forceHeight: false});
+        setTimeout(function() {
+         $(".events-veer-message-center").removeClass('flipInX').addClass('flipOutX');
+        }, 5000);
     }
-}
+});
 
-$(window).ready(turningOnOffParallax);
-//$(window).resize(turningOnOffParallax);
+$('.corners-post-lists').hover(function() {
+   $(this).find('a').addClass('link-hovered');
+   $(this).find('img').css('opacity', '0.9');
+}, function() {
+   $(this).find('a').removeClass('link-hovered');
+   $(this).find('img').css('opacity', '1');
+});

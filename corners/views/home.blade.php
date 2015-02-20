@@ -2,19 +2,6 @@
 
 @section('body')
 
-    <div class="fixed-header">
-        <div class="row top-background-line"></div>
-        <div class="container-fluid bolshaya-white-panel">
-            <div class="row">
-                <div class="col-sm-22 col-sm-offset-1 text-center">
-                    <span class="logo-header">{{ db_parameter('SITE_TITLE', 'Corners') }}</span>
-                </div>
-                <!--<div class="col-sm-10 text-right"><span class="phone-header">+7 (919) 760-06-74</span> <span class="email-header"><a href="mailto:work@bolshaya.net">work@bolshaya.net</a></span>
-        </div>-->
-            </div>
-        </div>
-    </div>
-
     <div class="container-fluid intro" data-top="transform:translate(0px,0px);" data-top-bottom="transform:translate(0px,-50px);">
         <div class="row bolshaya-overflow">
             <div class="col-sm-16 col-sm-offset-4 text-center">
@@ -22,13 +9,13 @@
                <div class="contact-form-group">
 				   <form method="POST">
 						<div class="form-inline contact-form">
-							<input name="email" type="text" class="form-control" placeholder="Email" size="30">
-							<button type="button" class="btn btn-primary">I Want!</button>
+							<input name="email" type="text" class="form-control" placeholder="Ваша почта" size="30">
+							<button type="button" class="btn btn-primary">Есть работа!</button>
 						</div>
 						<div class="form-inline contact-form-2 hidden">
-							<input name="contactName" type="text" class="form-control" placeholder="Name" size=30>
-							<input name="phone" type="text" class="form-control" placeholder="Phone (optional)" size=30>
-							<button type="submit" class="btn btn-danger">Yes!</button>
+							<input name="contactName" type="text" class="form-control" placeholder="Ваше имя" size=30>
+							<input name="phone" type="text" class="form-control" placeholder="Ваш телефон (по желанию)" size=30>
+							<button type="submit" class="btn btn-danger">Отправить!</button>
 						</div>
 				   </form>
                 </div>
@@ -100,10 +87,13 @@
             </div>
         </div>
 @endif
+
+	@include($template . '.layout.footer')
 	</div>             
+@stop
 
-    <div class="sidebar">*</div>
-
-    <div class="overlay"></div>
-
+@section('javascript-plugins')
+	@parent
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr.min.js') }}"></script>
+	<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr-effects.js') }}"></script>
 @stop
