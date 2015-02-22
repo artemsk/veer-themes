@@ -45,7 +45,7 @@
 		<p><a href="mailto:work@bolshaya.net">work@bolshaya.net</a></p>
 
 		<div class="bolshaya-categories">
-			<p class="extra-margin"><a href="{{ app('veer')->siteUrl }}">Home</a></p>
+			<p class="extra-margin"><a href="{{ app('veer')->siteUrl }}">Главная</a></p>
 			@if(count( data_get($data, 'function.globalCornersSidebar.data.categories') )>0)
 				@foreach( data_get($data, 'function.globalCornersSidebar.data.categories') as $category_id => $title)
 					<p><a href="{{ route('category.show', array('id'=>$category_id)) }}">{{ $title }}</a></p>

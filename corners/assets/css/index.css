@@ -203,8 +203,8 @@ p a {
 
 .type-8-text {
     background-color: #dedede;
-    height: 340px;
-    padding: 15% 15% 0px 15%;
+    min-height: 340px;
+    padding: 15% 15% 15% 15%;
 }
 
 .type-9-text {
@@ -309,6 +309,30 @@ h3 > .thinner {
     font-weight: bold;
 }
 
+.footer-line {
+    border-top-color: #333;
+}
+
+.veer {
+    font-size: 18px;
+}
+
+.veer-stats {
+    margin-top: 10px;
+    font-size: 9px;
+    color: #444;
+}
+
+.footer-right-to-left {
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .footer-right-to-left {
+        text-align: left;
+    }
+}
+
 /* sidebar */
 
 .sidebar {
@@ -340,6 +364,8 @@ h3 > .thinner {
 .sidebar .bolshaya-categories {
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 900;
+    color: #111;
 }
 
 .sidebar p a {
@@ -451,8 +477,9 @@ h3 > .thinner {
     color: #ffcc66;
 }
 
-/* post type 1 */
+/* post types */
 
+/* 1, 2 */
 .corners-post-type-1, .corners-post-type-3  {
     margin-top: 0px;
 }
@@ -528,6 +555,15 @@ h3 > .thinner {
     margin-bottom: 30px;  
 }
 
+.corners-text a {
+    text-decoration: underline;
+    color: rgba(0,0,0, 1);
+}
+
+.corners-text a:hover {
+    color: orangered;
+}
+
 .corners-author {
     padding-bottom: 30px;
 }
@@ -556,6 +592,30 @@ h3 > .thinner {
     }
 }
 
+.corners-post-type-3 .corners-post-category,
+.corners-post-type-3 .corners-post-title,
+.corners-post-type-3 .corners-post-date,
+.corners-post-type-3 .corners-post-sub-title {
+    color: #222 !important;
+}
+
+.corners-post-type-3 .corners-text {
+    color: rgba(0,0,0, 0.65) !important;
+    font-size: 22px;
+    line-height: 33px;
+    letter-spacing: 0.159999996423721px;
+}
+
+.corners-post-type-3 .corners-text {
+    margin-bottom: 40px;
+}
+
+.corners-post-type-3 .corners-line {
+    border-top-color: #ccc;
+}
+
+/* 3, 4, 5 */
+
 .narrow-post {
     max-width: 966px;
     margin-top: 60px;
@@ -583,55 +643,89 @@ h3 > .thinner {
 .corners-post-2-text {
     line-height: 24px;
     font-size: 16px;
-    color: rgba(34,34,34,0.8);
+    color: rgba(34,34,34,1);
+    font-weight: 300;
 }
 
 .corners-post-2-small-text {
-    line-height: 24px;
-    font-size: 16px;
-    color: rgba(34,34,34,0.8);
+    font-size: 26px;
+    line-height: 33px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .corners-post-2-text p {
     margin-bottom: 20px;
 }
 
+.corners-post-2-small-text a, .corners-post-2-text a,
+.corners-post-4-small-text a {
+    text-decoration: underline;
+}
+
+.corners-post-2-text a {
+    font-weight: 400;
+}
+
 .corners-post-2-extra-margin {
     margin-top: 25px;
 }
 
-.corners-post-type-3 .corners-post-category,
-.corners-post-type-3 .corners-post-title,
-.corners-post-type-3 .corners-post-date,
-.corners-post-type-3 .corners-post-sub-title {
-    color: #444 !important;
+.corners-post-2-extra-half-margin {
+    margin-top: 10px;
 }
 
-.corners-post-type-3 .corners-text {
-    color: rgba(0,0,0, 0.65) !important;
-    font-size: 22px;
-    line-height: 33px;
-    letter-spacing: 0.159999996423721px;
+.corners-post-4-title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 25px 25% 0px 40px;
+    color: #111;
+    width: 100%;
 }
 
-.corners-post-type-3 .corners-text {
-    margin-bottom: 40px;
+.corners-post-4-category {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
 }
 
-.corners-post-type-3 .corners-line {
-    border-top-color: #ccc;
-}
-/* image zoom
-
-.grow { 
-    -webkit-transition: all .22s ease-in-out;
-    -moz-transition: all .22s ease-in-out;
-    transition: all .22s ease-in-out;
+.corners-post-4-title h2, .corners-post-5-title h2 {
+    margin-top: 7px;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
 }
 
-.grow:hover { 
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    transform: scale(1.05); 
+.corners-post-4-small-text {
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.1px;
+    margin-bottom: 10px;
+    margin-top: 17px;
+    line-height: 21px;
 }
-*/
+
+.corners-post-4-info {
+    opacity: 0.5;
+    font-size: 11px;
+}
+
+.corners-post-5-title {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 25px 25% 0px 40px;
+    color: #fefefe;
+    width: 100%;
+}
+
+.corners-post-5-info-group {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0px 25% 25px 40px;
+    color: #fefefe;
+    width: 100%;
+}
