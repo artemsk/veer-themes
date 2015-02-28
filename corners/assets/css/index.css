@@ -1,5 +1,6 @@
 body {
     font-family: Roboto, "Open Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 .container-fluid {
@@ -79,9 +80,22 @@ p a {
 
 .intro {
     background-color: #f0f2f3;
-    margin-top: 60px;
+    margin-top: 60px; 
     padding-top: 75px;
     padding-bottom: 0px;
+}
+
+.intro-home {
+    background-color: #f0f2f3;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+
+.intro-category {
+    margin-top: 20px !important;
 }
 
 .moto-big, h1 {
@@ -94,23 +108,35 @@ p a {
     color: #2d2d2d;
 }
 
+.intro-home-content h1 {
+    color: #fff;
+    font-size: 50px;
+}
+
+.intro-home-content h2 {
+    color: #fff;
+    font-weight: 400;
+    margin-top: 50px;
+    line-height: 135%;
+}
+
 .hero-content {
     margin-top: 50px;
     min-height: 211px;
 }
 
-.contact-form, .contact-form-2 {
+.contact-form, .contact-form-2, .hero-link {
     margin-top: 35px;
 }
 
-.contact-form > button {
+.contact-form > button, .btn-sky {
     background-color: rgb(32, 152, 245);
     border-color: rgb(32, 152, 245);
     font-weight: bold;
     margin-left: 7px;
 }
 
-.contact-form > button:hover {
+.contact-form > button:hover, .btn-sky:hover {
     background-color: rgb(10, 124, 212);  
     border-color: rgb(10, 124, 212);  
 }
@@ -125,6 +151,19 @@ p a {
 .contact-form > button, .contact-form-2 > button {
     margin-bottom: 5px;  
     border-radius: 2px;
+}
+
+.btn-sky {
+    margin-bottom: 35px;  
+    border-radius: 2px;
+}
+
+.arrow-more {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -16px;
+    cursor: pointer;
 }
 
 /* block types */
@@ -258,6 +297,10 @@ p a {
 .bolshaya-mini-text-block > h3 {
     margin-top: 7px;
     font-weight: 500;
+}
+
+.bolshaya-mini-text-block a {
+    text-decoration: underline;
 }
 
 h3 > .thinner {
@@ -569,7 +612,7 @@ h3 > .thinner {
 }
 
 .corners-small-img {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     max-width: 75px;
     max-height: 75px;
 }
@@ -582,7 +625,12 @@ h3 > .thinner {
 }
 
 .corners-author-name {
-    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+}
+
+.corners-author-name-2 {
+    font-size: 12px;
 }
 
 @media (max-width: 550px) {
@@ -618,7 +666,7 @@ h3 > .thinner {
 
 .narrow-post {
     max-width: 966px;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .corners-post-2-title {
@@ -634,8 +682,8 @@ h3 > .thinner {
     text-transform: uppercase;
 }
 
-.blank-square-500 {
-    height: 500px;
+.blank-square {
+    height: 400px;
     border: 1px solid #ccc;
     width: 100%;
 }
@@ -728,4 +776,82 @@ h3 > .thinner {
     padding: 0px 25% 25px 40px;
     color: #fefefe;
     width: 100%;
+}
+
+.more-articles {
+    border-top: 2px #efefef solid;
+}
+
+.more-articles-post-no-img {
+    border-top: 2px #ddd solid;
+    padding-top: 10px;
+}
+
+.more-articles-title h2 {
+    font-weight: 300;
+}
+
+.category-title {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.comment-margin {
+    margin-top: 50px;
+}
+
+/* social buttons */
+
+.social-buttons {
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.social-buttons-type-2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.social-buttons-type-3 {
+    padding-top: 10px;
+    width: 85px;
+    margin: 0 auto;
+}
+
+.social-button {
+    float: left;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+.social-buttons .social-button {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.fb-social-button {
+    padding: 5px 10px;
+    border: 1px #dfe3ee solid;
+    border-radius: 5px;
+    color: #3b5998;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.twitter-social-button {
+    padding: 5px 10px;
+    border: 1px #c0deed solid;
+    border-radius: 5px;
+    color: #55acee;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.plus-social-button {
+    padding: 5px 10px;
+    border: 1px #dfe3ee solid;
+    border-radius: 5px;
+    color: #dd4b39;
+    letter-spacing: 1px;
+    white-space: nowrap;
 }

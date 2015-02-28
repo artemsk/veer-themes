@@ -69,8 +69,14 @@ $(document).ready(function() {
 
 $('.corners-post-lists').hover(function() {
    $(this).find('a').addClass('link-hovered');
-   $(this).find('img').css('opacity', '0.9');
+   $(this).find('img:not(.not-hovering-image)').css('opacity', '0.9');
 }, function() {
    $(this).find('a').removeClass('link-hovered');
-   $(this).find('img').css('opacity', '1');
+   $(this).find('img:not(.not-hovering-image)').css('opacity', '1');
+});
+
+$('.social-button a').click(function(e) {
+    e.preventDefault();
+    var loc = $(this).attr('href');
+    window.open(loc, '', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 });
