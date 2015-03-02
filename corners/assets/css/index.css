@@ -415,6 +415,10 @@ h3 > .thinner {
     text-decoration: none;
 }
 
+.img-logo {
+    max-width: 75px;
+}
+
 .overlay {
     background-color: #000;
     opacity: 0;

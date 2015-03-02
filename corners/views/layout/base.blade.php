@@ -35,6 +35,8 @@
         <![endif]-->
 
         @if(!empty(db_parameter('SCROLLBACK_ROOM')))<script>window.scrollback = {"room":"{{ db_parameter('SCROLLBACK_ROOM') }}","titlebarColor":"#81dab4","form":"toast","minimize":true};(function(d,s,h,e){e=d.createElement(s);e.async=1;e.src=(location.protocol === "https:" ? "https:" : "http:") + "//scrollback.io/client.min.js";d.getElementsByTagName(s)[0].parentNode.appendChild(e);}(document,"script"));</script>@endif
+
+        {{ db_parameter('SITE_COUNTER') }}
     </head>
     <body>
         <div class="fixed-header">
@@ -51,7 +53,7 @@
         @yield('body')
 
         <div class="sidebar">
-            <img data-src="holder.js/75x75/vine" src="{{ asset(config('veer.assets_path').'/'.$template.'/images/bam.jpg') }}" class="img-circle">
+            <img data-src="holder.js/75x75/vine" src="{{ asset(config('veer.assets_path').'/'.$template.'/images/bam.png') }}" class="img-circle img-responsive img-logo">
 
             <p class="extra-margin phone-header">{{ db_parameter('CONTACT_PHONE') }}</p>
             <p><a href="mailto:{{ db_parameter('CONTACT_EMAIL') }}">{{ db_parameter('CONTACT_EMAIL') }}</a></p>
