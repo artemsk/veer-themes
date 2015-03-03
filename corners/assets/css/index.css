@@ -526,7 +526,7 @@ h3 > .thinner {
 
 /* post types */
 
-/* 1, 2 */
+/* 1, 2, 6 */
 .corners-post-type-1, .corners-post-type-3  {
     margin-top: 0px;
 }
@@ -646,9 +646,13 @@ h3 > .thinner {
 
 .corners-post-type-3 .corners-post-category,
 .corners-post-type-3 .corners-post-title,
-.corners-post-type-3 .corners-post-date,
 .corners-post-type-3 .corners-post-sub-title {
-    color: #222 !important;
+    color: #000 !important;
+}
+
+.corners-post-type-3 .corners-post-date {
+    color: #999;
+    font-size: 12px;
 }
 
 .corners-post-type-3 .corners-text {
@@ -664,9 +668,35 @@ h3 > .thinner {
 
 .corners-post-type-3 .corners-line {
     border-top-color: #ccc;
+    margin-top: 20px;
 }
 
-/* 3, 4, 5 */
+.corners-post-type-3 .corners-post-sub-title { 
+    margin-top: 10px;
+}
+
+.corners-post-6-wrapper {
+    top: 0px;
+}
+
+@media (max-width: 991px) {
+.corners-post-6-wrapper .corners-text, .corners-post-main-content-wrapper .corners-text {
+    margin-top: 30px;
+}
+}
+
+.corners-post-6-img {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    min-height: 550px;
+    max-height: 1400px;
+    background-attachment: fixed;
+}
+
+/* 3, 4, 5, 7, 8 */
 
 .narrow-post {
     max-width: 966px;
@@ -743,7 +773,7 @@ h3 > .thinner {
     font-size: 13px;
 }
 
-.corners-post-4-title h2, .corners-post-5-title h2 {
+.corners-post-4-title h2, .corners-post-5-title h2, .corners-post-8-title h2 {
     margin-top: 7px;
     font-weight: 900;
     font-size: 40px;
@@ -804,11 +834,21 @@ h3 > .thinner {
     margin-top: 50px;
 }
 
+.corners-post-8-title {
+    margin-top: 30px;
+}
+
+.corners-post-8-small-text {
+    font-size: 24px;
+    line-height: 135%;
+    margin-top: 15px;
+}
+
 /* social buttons */
 
 .social-buttons {
     margin-top: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 .social-buttons-type-2 {

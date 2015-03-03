@@ -80,3 +80,7 @@ $('.social-button a').click(function(e) {
     var loc = $(this).attr('href');
     window.open(loc, '', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 });
+
+if($('.corners-post-6-img').length > 0) { 
+$('.corners-post-6-img').css('min-height', $(window).height()); 
+}

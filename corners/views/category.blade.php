@@ -33,9 +33,3 @@
     @include($template . '.layout.footer')
 </div>             
 @stop
-
-@section('javascript-plugins')
-@parent
-<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr.min.js') }}"></script>
-<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr-effects.js') }}"></script>
-@stop

@@ -23,3 +23,15 @@ Default
 SITE_TITLE
 CATEGORY_HOME
 TEMPLATE
+
+Attributes
+==========
+gridSize 6* | 12
+designType 1-11 | 9*
+titleColor
+bgColor
+designTypePost 1-8 | 1*
+titleColorPost
+imagePostFirst
+imagePostSecond
+(* - default)

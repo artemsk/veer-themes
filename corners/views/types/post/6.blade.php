@@ -1,10 +1,9 @@
-<div class="container-fluid corners-post-type-1">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-24 corners-post-img" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(@if(count(veer_get('event.images'))>0){{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}
+        <div class="col-sm-24 corners-post-6-img" style="background-image: url(@if(count(veer_get('event.images'))>0){{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}
              @endif)">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-24">
+            <div class="row" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">
+                    <div class="col-sm-22 col-sm-offset-1">
                         <div class="corners-post-category">
                             @if(isset($categories) && count($categories)>0)
                             @foreach($categories as $category)
@@ -17,15 +16,12 @@
                         <div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
                         </div>
 
-                        <hr class="corners-line"/>
-
                         <div class="corners-post-sub-title col-sm-16">{{ $page->small_txt or 'Small text' }}</div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
-    <div class="row corners-post-main-content-wrapper">
+    <div class="row corners-post-main-content-wrapper corners-post-6-wrapper">
         <div class="col-sm-24">
             <div class="container">
                 <div class="row corners-post-main-content">
