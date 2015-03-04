@@ -40,7 +40,7 @@ p a {
 }
 
 .fixed-header {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.95);
     position: fixed;
     top: 0px;
     left: 0px;
@@ -450,12 +450,12 @@ h3 > .thinner {
 
 .img-focus {
     overflow:hidden;
-    background-color: #000;
+    /*background-color: #000;*/
 }
 
 .img-focus-lighter {
     overflow:hidden;
-    background-color: #999;
+    /*background-color: #999;*/
 }
 
 /* show more */
@@ -694,6 +694,12 @@ h3 > .thinner {
     min-height: 550px;
     max-height: 1400px;
     background-attachment: fixed;
+}
+
+@media(max-width: @iphone-screen) {
+    .corners-post-6-img {
+        background-attachment: scroll;
+    }
 }
 
 /* 3, 4, 5, 7, 8 */

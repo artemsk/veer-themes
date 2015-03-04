@@ -11,14 +11,14 @@
                             @endforeach
                             @endif
                         </div>
-                        <div class="corners-post-title">{{ $page->title or 'Title' }}</div>
+                        @if($page->show_title)<div class="corners-post-title">{{ $page->title or 'Title' }}</div>@endif
 
-                        <div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
-                        </div>
+                        @if($page->show_date)<div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
+                        </div>@endif
 
-                        <hr class="corners-line"/>
+                        @if($page->show_small)<hr class="corners-line"/>@endif
 
-                        <div class="corners-post-sub-title col-sm-16">{{ $page->small_txt or 'Small text' }}</div>
+                        <div class="corners-post-sub-title col-sm-16">@if($page->show_small){{ $page->small_txt or 'Small text' }}@endif</div>
                     </div>
                 </div>
             </div>
@@ -29,11 +29,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1 text-center corners-author">
-                        @if(count(veer_get('event.images'))>0)
-                        <img data-src="holder.js/75x75/vine"
-                             src="{{ asset(config('veer.images_path').'/'.data_get(veer_get('event.images')->shift(), 'img')) }}" class="corners-small-img">
-                        @endif
                         @if(isset($page->user) && !empty($page->user->username))
+                        <img data-src="holder.js/75x75"
+                             src="{{ asset(config('veer.images_path').'/'.data_get($page->user->images, '0.img')) }}" class="img-circle corners-small-img">
                         <div class="corners-author-name">{{ '@'.$page->user->username }}</div>
                         @endif
                         <div class="social-buttons-type-3">@include($template . '.layout.social')</div>

@@ -15,15 +15,15 @@
                     @endforeach
                     @endif</div>
 
-                <h2 class="text-center">{{ $page->title }}</h2>
+                @if($page->show_title)<h2 class="text-center">{{ $page->title }}</h2>@endif
 
             </div>
 
         </div>
         <div class="col-sm-8">
-            <div class="corners-post-2-small-text">{{ $page->small_txt }}</div>
+            @if($page->show_small)<div class="corners-post-2-small-text">{{ $page->small_txt }}</div>@endif
             <small>
-                <p><span class="text-muted">{{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}</span>
+                <p>@if($page->show_date)<span class="text-muted">{{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}</span>@endif
                     @if(isset($page->user) && !empty($page->user->username))
                     {{ ' @'.$page->user->username.'' }}
                     @endif

@@ -15,6 +15,9 @@ function turningOnOffParallax(selector) {
 function introHeight(selector) {
    $(selector).css('min-height', $(window).height()); 
    $('.intro-home-content').css('margin-top', $(window).height()/4);
+   
+   $('.fixed-header').css('background-color', 'rgba(255,255,255,0)');
+   $('.sidebar-menu').css('color', '#666');
 }
 
 if($('.intro').length > 0) { 

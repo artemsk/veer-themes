@@ -11,12 +11,12 @@
                             @endforeach
                             @endif
                         </div>
-                        <div class="corners-post-title">{{ $page->title or 'Title' }}</div>
+                        @if($page->show_title)<div class="corners-post-title">{{ $page->title or 'Title' }}</div>@endif
 
-                        <div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
-                        </div>
+                        @if($page->show_date)<div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
+                        </div>@endif
 
-                        <div class="corners-post-sub-title col-sm-16">{{ $page->small_txt or 'Small text' }}</div>
+                        @if($page->show_small)<div class="corners-post-sub-title col-sm-16">{{ $page->small_txt or 'Small text' }}</div>@endif
                     </div>
                 </div>
         </div>
@@ -26,11 +26,9 @@
             <div class="container">
                 <div class="row corners-post-main-content">
                     <div class="col-md-3 col-md-offset-1 text-center corners-author">
-                        @if(count(veer_get('event.images'))>0)
-                        <img data-src="holder.js/75x75/vine"
-                             src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}" class="corners-small-img">
-                        @endif
                         @if(isset($page->user) && !empty($page->user->username))
+                        <img data-src="holder.js/75x75"
+                             src="{{ asset(config('veer.images_path').'/'.data_get($page->user->images, '0.img')) }}" class="img-circle corners-small-img">
                         <div class="corners-author-name-2">{{ '@'.$page->user->username }}</div>
                         @endif
                         <div class="social-buttons-type-3">@include($template . '.layout.social')</div>

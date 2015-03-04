@@ -63,6 +63,8 @@
 
 @section('javascript-plugins')
 @parent
+@if(db_parameter('HERO_ON_HOME', false))
 <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr.min.js') }}"></script>
 <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr-effects.js') }}"></script>
+@endif
 @stop

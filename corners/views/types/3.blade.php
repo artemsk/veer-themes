@@ -7,9 +7,9 @@
         <img data-src="holder.js/100%x340" class="img-responsive">
         @endif
     </div>
-    <div class="type-3-text text-center">
+    <div class="type-3-text text-center" style="color: {{ data_get($data->params, 'titleColor', 'auto') }}">
         <h4><a href="{{ route('page.show', $data->url) }}">{{ $data->title or 'Title' }}</a></h4>
-        <p>{{ $data->small_txt or 'Small Text' }}</p><small class="text-muted type-2-information">
+        <p>{{ $data->small_txt or 'Small Text' }}</p><small class="text-muted type-2-information" style="color: {{ data_get($data->params, 'titleColor', 'auto') }}">
             {{ data_get($data, 'categories.0.title') }}
             <strong>
                 @if(isset($data->created_at))
