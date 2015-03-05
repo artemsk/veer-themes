@@ -11,8 +11,8 @@
 <div class="container-fluid bolshaya-main-content bolshaya-background-white">
     <div class="row">
         <div class="col-sm-22 col-sm-offset-1">
-            @if( count(data_get($data, 'function.indexCornersPages.data.gridSort')) > 0 )
-            @include($template . '.layout.pages-list', array('data' => $data))
+            @if( count(veer_get('function.indexCornersPages.data.gridSort')) > 0 )
+            @include($template . '.layout.pages-list')
             @endif
 
             <!--
@@ -34,15 +34,15 @@
 </section>
 </div>
     -->
-    @if( count(data_get($data, 'function.indexCornersDigest.data.items')) > 0 )
+    @if( count(veer_get('function.indexCornersDigest.data.items')) > 0 )
     <div class="row">
         <div class="col-sm-22 col-sm-offset-1">
             <div class="row bolshaya-content-row">
-                <div class="col-sm-22 digest-title"><strong>{{ data_get($data, 'function.indexCornersDigest.data.tagName', 'Digest') }}</strong>
+                <div class="col-sm-22 digest-title"><strong>{{ veer_get('function.indexCornersDigest.data.tagName', 'Digest') }}</strong>
                 </div>
             </div>
             <div class="row bolshaya-content-half-row">
-                @foreach(data_get($data, 'function.indexCornersDigest.data.items') as $key => $item)
+                @foreach(veer_get('function.indexCornersDigest.data.items') as $key => $item)
                 @if($key == 4)
                 <div class="visible-sm clearfix"></div>
                 <div class="visible-xs visible-sm bolshaya-content-row"></div>

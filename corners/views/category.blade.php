@@ -24,8 +24,8 @@
 <div class="container-fluid bolshaya-main-content bolshaya-background-white">
     <div class="row">
         <div class="col-sm-22 col-sm-offset-1">
-            @if( count(data_get($data, 'function.indexCornersPages.data.gridSort')) > 0 )
-            @include($template . '.layout.pages-list', array('data' => $data))
+            @if( count(veer_get('function.indexCornersPages.data.gridSort')) > 0 )
+            @include($template . '.layout.pages-list')
             @endif
         </div>
     </div>

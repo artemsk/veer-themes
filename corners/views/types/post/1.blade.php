@@ -58,7 +58,7 @@
                         @endif
                         @if($page->show_comments)
                         <p class="comment-margin">
-                            {{ data_get(app('veer')->loadedComponents, 'comments_disqus') }}
+                            {{ veer_get('comments_disqus') }}
                             @endif
                     </div>
                 </div>

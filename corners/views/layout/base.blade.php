@@ -60,8 +60,8 @@
 
             <div class="bolshaya-categories">
                 <p class="extra-margin"><a href="{{ app('veer')->siteUrl }}">Главная</a></p>
-                @if(count( data_get($data, 'function.globalCornersSidebar.data.categories') )>0)
-                @foreach( data_get($data, 'function.globalCornersSidebar.data.categories') as $category_id => $title)
+                @if(count( veer_get('function.globalCornersSidebar.data.categories') )>0)
+                @foreach( veer_get('function.globalCornersSidebar.data.categories') as $category_id => $title)
                 <p><a href="{{ route('category.show', array('id'=>$category_id)) }}">{{ $title }}</a></p>
                 @endforeach
                 @endif
@@ -72,9 +72,9 @@
 
         <div class="overlay"></div>
 
-        @if(!empty($data['veer_message_center']))
-        <div class="events-veer-message-center">{{ head($data['veer_message_center']) }}</div>
-        @endif
+        @if(!empty(veer_get('veer_message_center')))
+	<div class="events-veer-message-center">{{ head(veer_get('veer_message_center')) }}</div>
+	@endif
 
         @section('javascript-plugins')
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

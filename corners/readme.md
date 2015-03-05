@@ -27,11 +27,12 @@ TEMPLATE
 Attributes
 ==========
 gridSize 6* | 12
-designType 1-11 | 9*
+designType 1-11 | 2*
 titleColor
 bgColor
 designTypePost 1-8 | 1*
 titleColorPost
 imagePostFirst
 imagePostSecond
+imagePostHidden
 (* - default)
