@@ -11,7 +11,7 @@
 
                 <div class="corners-post-4-category">@if(isset($categories) && count($categories)>0)
                     @foreach($categories as $category)
-                    {{ $category->title }}
+                    <a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a>
                     @endforeach
                     @endif</div>
 

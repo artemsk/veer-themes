@@ -168,6 +168,10 @@ p a {
 
 /* block types */
 
+.corners-post-lists {
+    position: relative;
+}
+
 .type-2-image {
     //margin-bottom: 15px;
 }
@@ -175,6 +179,18 @@ p a {
 .type-2-information {
     display: block;
     margin-top: 5px;
+}
+
+.type-2-information a:hover {
+    text-decoration: none !important;
+}
+
+.type-2-information a {
+    text-decoration: none !important;
+}
+
+.type-2-title {
+    margin-top: 14px;
 }
 
 .type-3-text, .type-4-text {
@@ -212,6 +228,10 @@ p a {
     text-transform: uppercase;
 }
 
+.type-6-category a, .type-5-category a {
+    text-decoration: none;
+}
+
 .type-5-image {
     margin-bottom: 15px;
 }
@@ -220,17 +240,25 @@ p a {
     margin-top: 7px;
 }
 
-.type-6-text {
+.type-6-text, .type-12-text {
     position: absolute;
-    bottom: 15px;
     left: 0px;
     right: 0px;
     padding: 0px 15% 0px 15%;
 }
 
+.type-6-text { bottom: 15px; }
+
+.type-12-text { top: 30px; }
+
+.type-6-title .link-hovered, .type-3-text .link-hovered, .type-4-text .link-hovered, 
+.type-6-category .link-hovered {
+    color: inherit !important;
+}
+
 .type-7-text {
     background-color: #dedede;
-    min-height: 400px;
+    min-height: 340px;
     padding: 45px 15% 0px 15%;
 }
 
