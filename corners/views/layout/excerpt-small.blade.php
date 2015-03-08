@@ -1,16 +1,16 @@
-@if(isset($excerpts) && count($excerpts->where('id',(int)$connectedId))>0)
+@if(!empty($connectedId) && null != (data_get($excerpts, $connectedId)))
 <div class="row bolshaya-content-row">
     <div class="col-xs-24">
         <div class="bolshaya-mini-img-block">
-            @if(isset($excerpts->where('id',(int)$connectedId)->first()->images) && count($excerpts->where('id',(int)$connectedId)->first()->images)>0)
-            <a href="{{ route('page.show', $excerpts->where('id',(int)$connectedId)->first()->url) }}">
-                <img src="{{ asset(config('veer.images_path').'/'.$excerpts->where('id',(int)$connectedId)->first()->images[0]->img) }}" class="img-responsive img-circle">
+            @if(isset(data_get($excerpts, $connectedId)->images) && count(data_get($excerpts, $connectedId)->images)>0)
+            <a href="{{ route('page.show', data_get($excerpts, $connectedId)->url) }}">
+                <img src="{{ asset(config('veer.images_path').'/'.data_get($excerpts, $connectedId)->images[0]->img) }}" class="img-responsive img-circle">
             </a>
             @else
             <img data-src="holder.js/75x75" class="img-circle">
             @endif
         </div>
-        <div class="bolshaya-mini-text-block">{{ $excerpts->where('id',(int)$connectedId)->shift()->small_txt }}</div>
+        <div class="bolshaya-mini-text-block">{{ data_get($excerpts, $connectedId . '.small_txt') }}</div>
     </div>
 </div>
 @endif

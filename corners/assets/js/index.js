@@ -78,9 +78,19 @@ $('.corners-post-lists').hover(function() {
 $('.social-button a').click(function(e) {
     e.preventDefault();
     var loc = $(this).attr('href');
-    window.open(loc, '', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+    window.open(loc, '', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=1');
 });
 
 if($('.corners-post-6-img').length > 0) { 
 $('.corners-post-6-img').css('min-height', $(window).height()); 
 }
+
+/*$('img').ready(function() {
+    $('img').css('opacity','0');
+    setTimeout(function() {
+         $('img').addClass('fade-corners').css('opacity','1');
+     },1);
+    setTimeout(function() {
+         $('img').removeClass('fade-corners');
+     },300);
+});*/

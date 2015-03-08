@@ -22,9 +22,9 @@ class indexCornersDigest
         $this->data['items'] = $this->getElementsWhereHasModel('pages', 'tags',
                 $this->tagId, app('veer')->siteId,
                 array(
-                "take" => $this->number_of_items
+                "take_pages" => $this->number_of_items
                 ), true)->select('id', 'url', 'title', 'small_txt', 'views',
-                'created_at', 'users_id')->get();
+                'created_at', 'users_id')->orderBy('manual_order', 'desc')->get();
 
         $this->data['tagName'] = \Cache::remember('tagNameId'.$this->tagId, 2,
                 function() {

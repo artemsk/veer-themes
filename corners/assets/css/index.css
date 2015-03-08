@@ -933,3 +933,10 @@ h3 > .thinner {
     letter-spacing: 1px;
     white-space: nowrap;
 }
+
+.fade-corners {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
