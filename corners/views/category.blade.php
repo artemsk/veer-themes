@@ -1,6 +1,8 @@
 @extends($template.'.layout.base')
 
 @section('meta-properties')
+<meta name="keywords" content="{{ db_parameter('SITE_KEYWORDS') }}" />
+<meta name="description" content="{{ db_parameter('SITE_DESCRIPTION') }}" />
 <meta property="og:type"            content="website" />
 <title>{{ $category->title or null }} — {{ db_parameter('SITE_TITLE') }}</title>
 <meta name="title" content="{{ $category->title or null }} — {{ db_parameter('SITE_TITLE') }}" />

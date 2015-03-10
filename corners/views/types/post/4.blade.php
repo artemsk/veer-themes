@@ -30,13 +30,16 @@
 
         </div>
         <div class="col-sm-8">
-            <div class="blank-square hidden-xs"></div>
-            <div class="social-buttons-type-2">@include($template . '.layout.social')</div>
+            <div class="bolshaya-content-row visible-xs-block"></div>
+            <div class="blank-square corners-ad">{{ db_parameter('CORNERS_AD') }}</div>       
         </div>
     </div>
 
     <div class="row corners-post-2-extra-margin">
         <div class="col-sm-16 corners-post-2-text">
+            <div class="social-buttons-type-2">@include($template . '.layout.social')</div>
+            <div class="clearfix"></div>
+            <div class="corners-post-2-extra-margin"></div>
             @foreach(paragraphs($page->txt, '(((img)))') as $key => $p)
             {{ $p }}
             @if(count(veer_get('event.images'))>0)

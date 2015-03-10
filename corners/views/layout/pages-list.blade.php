@@ -9,7 +9,6 @@
     @endforeach
 </div>
 @endforeach
-
 <div id="showMoreData{{ veer_get('function.indexCornersPages.data.items')->currentPage() }}">
     @if(veer_get('function.indexCornersPages.data.items')->hasMorePages())
     <div class="row bolshaya-content-row">

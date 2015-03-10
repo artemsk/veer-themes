@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="{{ db_parameter('SITE_KEYWORDS') }}" />
-        <meta name="description" content="{{ db_parameter('SITE_DESCRIPTION') }}" />
         <meta property="og:site_name"       content="{{ db_parameter('SITE_TITLE') }}" />
         <meta property="fb:app_id"          content="{{ db_parameter('FB_APPID') }}" />
         <meta property="og:url"             content="{{ \URL::current() }}" />
         <meta property="og:locale"          content="ru_RU" />
         @section('meta-properties')
+        <meta name="keywords" content="{{ db_parameter('SITE_KEYWORDS') }}" />
+        <meta name="description" content="{{ db_parameter('SITE_DESCRIPTION') }}" />
         <meta property="og:type"            content="website" />
         <title>{{ db_parameter('SITE_TITLE') }}</title>
         <meta name="title" content="{{ db_parameter('SITE_TITLE') }}" />

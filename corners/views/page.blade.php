@@ -1,6 +1,8 @@
 @extends($template.'.layout.base')
 
 @section('meta-properties')
+<meta name="keywords" content="{{ implode(',',$page->tags->lists('name')) }}" />
+<meta name="description" content="{{ strip_tags($page->small_txt) }}" />
 <meta property="og:type"            content="article" />
 <title>{{ $page->title or null }} — {{ db_parameter('SITE_TITLE') }}</title>
 <meta name="title" content="{{ $page->title or null }} — {{ db_parameter('SITE_TITLE') }}" />

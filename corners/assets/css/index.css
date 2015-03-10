@@ -730,7 +730,7 @@ h3 > .thinner {
     }
 }
 
-/* 3, 4, 5, 7, 8 */
+/* 3, 4, 5, 7, 8, 9 */
 
 .narrow-post {
     max-width: 966px;
@@ -752,8 +752,7 @@ h3 > .thinner {
 
 .blank-square {
     height: 400px;
-    border: 1px solid #ccc;
-    width: 100%;
+    border: 0px solid #ccc;
 }
 
 .corners-post-2-text {
@@ -846,6 +845,15 @@ h3 > .thinner {
     width: 100%;
 }
 
+.corners-post-9-title {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 0px 25% 25px 40px;
+    color: #111;
+    width: 100%;
+}
+
 .more-articles {
     border-top: 2px #efefef solid;
 }
@@ -886,8 +894,8 @@ h3 > .thinner {
 }
 
 .social-buttons-type-2 {
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-bottom: 0px;
 }
 
 .social-buttons-type-3 {
@@ -939,4 +947,9 @@ h3 > .thinner {
    transition: opacity .25s ease-in-out;
    -moz-transition: opacity .25s ease-in-out;
    -webkit-transition: opacity .25s ease-in-out;
+}
+
+.mini-block-image {
+    max-width: 75px !important;
+    max-height: 75px !important;
 }
