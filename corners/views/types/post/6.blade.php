@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid corners-post-type-6">
     <div class="row">
         <div class="col-sm-24 corners-post-6-img" style="background-image: url(@if(count(veer_get('event.images'))>0){{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}
              @endif)">
@@ -63,3 +63,7 @@
     </div>
     @include($template . '.layout.footer')
 </div>
+
+@section('additional-css')
+<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/page.css') }}">
+@stop

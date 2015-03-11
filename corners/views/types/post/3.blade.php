@@ -60,3 +60,7 @@
 <div class="container-fluid">
     @include($template . '.layout.footer')
 </div>
+
+@section('additional-css')
+<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/page-narrow.css') }}">
+@stop

@@ -554,7 +554,7 @@ h3 > .thinner {
 
 /* post types */
 
-/* 1, 2, 6 */
+/* 1, 2, 6, 10 */
 .corners-post-type-1, .corners-post-type-3  {
     margin-top: 0px;
 }
@@ -730,11 +730,25 @@ h3 > .thinner {
     }
 }
 
+.corners-post-10-img {
+    max-height: 535px !important;
+    overflow: hidden;
+}
+
+.corners-post-10-img img {
+    width: 100%;
+}
+
 /* 3, 4, 5, 7, 8, 9 */
 
 .narrow-post {
     max-width: 966px;
-    margin-top: 80px;
+    margin-top: 20px;
+}
+
+.narrow-post-10 {
+    max-width: 966px;
+    margin-top: 0px;
 }
 
 .corners-post-2-title {

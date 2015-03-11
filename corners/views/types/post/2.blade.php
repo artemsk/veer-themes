@@ -67,3 +67,7 @@
     </div>
     @include($template . '.layout.footer')
 </div>
+
+@section('additional-css')
+<link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/page.css') }}">
+@stop
