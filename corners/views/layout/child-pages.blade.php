@@ -1,7 +1,7 @@
 @if(isset($subpages) && count($subpages) > 0)
 <div class="row bolshaya-content-row">
     <div class="col-xs-24 more-articles-title">
-        <h2>Читать на эту тему</h2>
+        <h2>Читать</h2>
     </div>
 </div>
 <div class="row">

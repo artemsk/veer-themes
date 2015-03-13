@@ -14,7 +14,7 @@
                         </div>
                         @if($page->show_title)<div class="corners-post-title">{{ $page->title or 'Title' }}</div>@endif
 
-                        @if($page->show_date)<div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
+                        @if($page->show_date)<div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}
                         </div>@endif
 
                         @if($page->show_small)<hr class="corners-line"/>
@@ -55,17 +55,23 @@
                             </div>
                         </div>
                         @endif
+                        <span class="end-of-text-mark"></span>
                         @if($page->show_comments)
                         <p class="comment-margin">
-                        {{ veer_get('comments_disqus') }}
+                            {{ veer_get('comments_disqus') }}   
                         @endif
+                        <p>{{ db_parameter('CORNERS_COMMENTS_SIDEBAR'); }}
                     </div>
                 </div>
                 @include($template . '.layout.child-pages', array('subpages' => $subpages))
             </div>
         </div>
     </div>
-    @include($template . '.layout.footer')
+</div>
+<div class="corners-full-width-footer">
+    <div class="container-fluid">
+        @include($template . '.layout.footer')
+    </div>
 </div>
 
 @section('additional-css')

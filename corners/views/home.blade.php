@@ -56,9 +56,12 @@
         </div>
     </div>
     @endif
-
-    @include($template . '.layout.footer')
-</div>             
+</div>
+<div class="corners-full-width-footer">
+    <div class="container-fluid">
+        @include($template . '.layout.footer')
+    </div>
+</div>
 @stop
 
 @section('javascript-plugins')

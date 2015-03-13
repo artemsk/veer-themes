@@ -1,9 +1,26 @@
-<div class="container-fluid corners-post-type-3">
-    <div class="row corners-post-10-img text-center">
+<div class="container-fluid">
+    <div class="row corners-post-10-img text-center corners-post-type-3">
             @if(count(veer_get('event.images'))>0)
             <img src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}">
             @endif
     </div>
+                <div class="corners-post-11-info">
+                    <div class="container narrow-post-10">
+                    <div class="col-sm-24">
+                        <div class="corners-post-category" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }} !important;">
+                            @if(isset($categories) && count($categories)>0)
+                            @foreach($categories as $category)
+                            <a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a>
+                            @endforeach
+                            @endif
+                        </div>
+                        @if($page->show_title)<div class="corners-post-title" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }} !important;">{{ $page->title or 'Title' }}</div>@endif
+
+                        @if($page->show_date)<div class="corners-post-date" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }} !important;">{{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}
+                        </div>@endif
+                    </div>
+                    </div>
+                </div>
 </div>
 
 <div class="container narrow-post-10">
@@ -12,13 +29,6 @@
         <div class="col-sm-24">
             <div class="social-buttons">@include($template . '.layout.social')</div>
             <div class="clearfix"></div>
-            <div class="bolshaya-content-half-row"></div>
-            @if($page->show_title)<h2>{{ $page->title }}</h2>@endif
-            <div class="corners-post-4-category">@if(isset($categories) && count($categories)>0)
-                @foreach($categories as $category)
-                <a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a>
-                @endforeach
-                @endif</div>
         </div>
     </div>
 
@@ -27,8 +37,7 @@
             <div class="corners-post-8-small-text">
                 @if($page->show_small){{ $page->small_txt }}@endif
                 <span class="corners-post-4-info">
-                    <p>@if($page->show_date){{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}@endif
-                        @if(isset($page->user) && !empty($page->user->username))
+                    <p>@if(isset($page->user) && !empty($page->user->username))
                         <strong>{{ ' @'.$page->user->username.'' }}</strong>
                         @endif
                     </p>

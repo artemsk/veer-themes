@@ -21,12 +21,18 @@
             @endforeach
         </div>
     </div>
-    <div class="col-sm-7 col-sm-offset-1">
-    </div>
 </div>
 @endif
+<span class="end-of-text-mark"></span>
 @if($page->show_comments)
 <p class="comment-margin">
-    {{ veer_get('comments_disqus') }}
+<div class="row">
+    <div class="col-xs-24 col-sm-16">
+        {{ veer_get('comments_disqus') }}
+    </div>
+    <div class="col-sm-8 hidden-xs text-right">
+        {{ db_parameter('CORNERS_COMMENTS_SIDEBAR'); }}
+    </div>
+</div>
     @endif
     @include($template . '.layout.child-pages', array('subpages' => $subpages))

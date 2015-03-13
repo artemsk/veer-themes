@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-24">
             @if(count(veer_get('event.images'))>0)
-            <img data-src="holder.js/100%x600/#111:#000/text:&nbsp;" src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}" class="img-responsive">
+            <img data-src="holder.js/100%x500/#111:#000/text:&nbsp;" src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}" class="img-responsive">
             @else
             <img data-src="holder.js/100%x500/#9999CC:#000/text:&nbsp;" class="img-responsive">
             @endif
@@ -54,8 +54,10 @@
     </div>
 @include($template.'.types.post.post-bottom')
 </div>
-<div class="container-fluid">
-    @include($template . '.layout.footer')
+<div class="corners-full-width-footer">
+    <div class="container-fluid">
+        @include($template . '.layout.footer')
+    </div>
 </div>
 
 @section('additional-css')

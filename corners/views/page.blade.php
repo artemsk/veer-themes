@@ -33,7 +33,24 @@
 
 @section('body')
 
-<?php event('page.images', [[$page->imagesIds, $page->attributes->lists('val', 'name')]]); ?>
+<?php 
+    event('page.images', [[$page->imagesIds, $page->attributes->lists('val', 'name')]]);
+    event('page.neighbours', [$page->id]);
+?>
 @include($template . '.types.post.' . data_get($page->attributes->where('name', 'designTypePost')->first(), 'val', 1), array('template' => $template, 'page' => $page, 'categories' => $categories))
 
+@if(veer_get('event.neighbours.exists') == true)
+<div class="myToastr">
+    <div class="page-neighbours-previous"><a href="{{ route('page.show', veer_get('event.neighbours.previous.id')) }}" title="{{ veer_get('event.neighbours.previous.title') }}">{{ str_limit(veer_get('event.neighbours.previous.title'), 45) }}</a></div>
+    <div class="page-neighbours-next hidden-xs hidden-sm"><a href="{{ route('page.show', veer_get('event.neighbours.next.id')) }}" title="{{ veer_get('event.neighbours.next.title') }}">{{ str_limit(veer_get('event.neighbours.next.title'), 45) }}</a></div>
+</div>
+@endif
+
+@stop
+
+@section('javascript-plugins')
+@parent
+@if(veer_get('event.neighbours.exists') == true)
+<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/toastr-startup.js') }}"></script>
+@endif
 @stop

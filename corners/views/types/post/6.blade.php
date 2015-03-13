@@ -2,21 +2,21 @@
     <div class="row">
         <div class="col-sm-24 corners-post-6-img" style="background-image: url(@if(count(veer_get('event.images'))>0){{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}
              @endif)">
-            <div class="row" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">
+            <div class="row" >
                     <div class="col-sm-22 col-sm-offset-1">
-                        <div class="corners-post-category">
+                        <div class="corners-post-category" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">
                             @if(isset($categories) && count($categories)>0)
                             @foreach($categories as $category)
                             <a href="{{ route('category.show', $category->id) }}">{{ $category->title }}</a>
                             @endforeach
                             @endif
                         </div>
-                        @if($page->show_title)<div class="corners-post-title">{{ $page->title or 'Title' }}</div>@endif
+                        @if($page->show_title)<div class="corners-post-title" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">{{ $page->title or 'Title' }}</div>@endif
 
-                        @if($page->show_date)<div class="corners-post-date">{{ \Carbon\Carbon::parse($page->created_at)->format('H:i, d F Y') }}
+                        @if($page->show_date)<div class="corners-post-date" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">{{ \Carbon\Carbon::parse($page->created_at)->format('d F Y') }}
                         </div>@endif
 
-                        @if($page->show_small)<div class="corners-post-sub-title col-sm-16">{{ $page->small_txt or 'Small text' }}</div>@endif
+                        @if($page->show_small)<div class="corners-post-sub-title col-sm-16" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">{{ $page->small_txt or 'Small text' }}</div>@endif
                     </div>
                 </div>
         </div>
@@ -51,17 +51,23 @@
                             </div>
                         </div>
                         @endif
+                        <span class="end-of-text-mark"></span>
                         @if($page->show_comments)
                         <p class="comment-margin">
-                        {{ veer_get('comments_disqus') }}
+                            {{ veer_get('comments_disqus') }}
                         @endif
+                        <p>{{ db_parameter('CORNERS_COMMENTS_SIDEBAR'); }}
                     </div>
                 </div>
                 @include($template . '.layout.child-pages', array('subpages' => $subpages))
             </div>
         </div>
     </div>
-    @include($template . '.layout.footer')
+</div>
+<div class="corners-full-width-footer">
+    <div class="container-fluid">
+        @include($template . '.layout.footer')
+    </div>
 </div>
 
 @section('additional-css')

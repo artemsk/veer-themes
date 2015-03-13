@@ -1,11 +1,11 @@
 <div class="container narrow-post">
 
     <div class="row">
-        <div class="col-sm-16">
+        <div class="col-sm-16 corners-post-3-img-blank">
             @if(count(veer_get('event.images'))>0)
-            <img data-src="holder.js/100%x562" src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}" class="img-responsive img-rounded">
+            <img data-src="holder.js/100%x500" src="{{ asset(config('veer.images_path').'/'.veer_get('event.images')->shift()->img) }}" class="img-responsive img-rounded">
             @else
-            <img data-src="holder.js/100%x340/#9999CC:#000/text:&nbsp;" class="img-responsive img-rounded">
+            <img data-src="holder.js/100%x500/#9999CC:#000/text:&nbsp;" class="img-responsive img-rounded">
             @endif
             <div class="corners-post-2-title" style="color: {{ data_get($page->attributes->lists('val', 'name'), 'titlePostColor', 'auto') }}">
 
@@ -57,8 +57,10 @@
     </div>
 @include($template.'.types.post.post-bottom')
 </div>
-<div class="container-fluid">
-    @include($template . '.layout.footer')
+<div class="corners-full-width-footer">
+    <div class="container-fluid">
+        @include($template . '.layout.footer')
+    </div>
 </div>
 
 @section('additional-css')

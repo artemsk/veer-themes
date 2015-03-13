@@ -7,6 +7,14 @@ body {
     max-width: 1400px;
 }
 
+.corners-full-width-footer {
+    width: 100%;
+    background-color: #222;
+    padding-top: 0px;
+    padding-bottom: 30px;    
+    margin-top: 40px;
+}
+
 .bolshaya-content-row {
     margin-top: 40px;
 }
@@ -342,8 +350,6 @@ h3 > .thinner {
 /* foot */
 
 .footer {
-    padding-top: 30px;
-    padding-bottom: 30px;
     background-color: #222;
     color: rgba(122, 122, 122, 0.8);
 }
@@ -552,9 +558,57 @@ h3 > .thinner {
     color: #ffcc66;
 }
 
+
+.myToastr {
+    -webkit-box-shadow: rgb(153, 153, 153) 0px 0px 12px 0px;
+    background-color: rgb(47, 150, 180);
+    border-radius: 3px;
+    box-shadow: rgb(153, 153, 153) 0px 0px 12px 0px;
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: 14px;
+    min-height: 50px;
+    opacity: 0.800000011920929;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 15px 15px 15px 15px;
+    position: fixed;
+    top: 0px;
+    width: 96%;
+    margin-left: 2%;
+    z-index: 100;
+    
+    -webkit-animation-duration: 0.25s; /* Chrome, Safari, Opera */
+    animation-duration: 0.25s;
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.page-neighbours-next {
+    position: absolute;
+    left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.page-neighbours-next a:hover, .page-neighbours-previous a:hover {
+    color: #fff;
+}
+
+.page-neighbours-next a, .page-neighbours-previous a {
+    text-decoration: underline;
+}
+
+.page-neighbours-previous {
+    position: absolute;
+    right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
 /* post types */
 
-/* 1, 2, 6, 10 */
+/* 1, 2, 6, 10, 11 */
 .corners-post-type-1, .corners-post-type-3  {
     margin-top: 0px;
 }
@@ -739,6 +793,13 @@ h3 > .thinner {
     width: 100%;
 }
 
+.corners-post-11-info {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
 /* 3, 4, 5, 7, 8, 9 */
 
 .narrow-post {
@@ -820,7 +881,7 @@ h3 > .thinner {
     font-size: 13px;
 }
 
-.corners-post-4-title h2, .corners-post-5-title h2, .corners-post-8-title h2 {
+.corners-post-4-title h2, .corners-post-5-title h2, .corners-post-8-title h2, .corners-post-9-title h2  {
     margin-top: 7px;
     font-weight: 900;
     font-size: 40px;

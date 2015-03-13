@@ -26,7 +26,9 @@
         <link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/animate.css') }}">
         <link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="{{ asset(config('veer.assets_path').'/'.$template.'/css/index.css') }}">
+        @yield('additional-global-css')
         @yield('additional-css')
+        
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
