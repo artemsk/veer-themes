@@ -43,12 +43,12 @@ p a {
 /* top */
 
 .top-background-line {
-    background-color: #ccc; 
+    background-color: #eee; 
     height: 7px;
 }
 
 .fixed-header {
-    background-color: rgba(255,255,255,0.95);
+    //background-color: rgba(255,255,255,0.95);
     position: fixed;
     top: 0px;
     left: 0px;
@@ -60,16 +60,33 @@ p a {
 
 .bolshaya-white-panel {
     padding-top: 15px;
-    color: #222;
-    overflow: hidden;
+    //color: #222;
+    //overflow: hidden;
 }
 
 .logo-header {
     letter-spacing: 5px;
+    border: 2px #386ce0 solid;
+    padding: 5px 10px 5px 15px;
+    color: #386ce0;
+    white-space: nowrap;
+    //background-color: #fff;
 }
 
-.logo-header a:hover {
+.logo-header a:hover, .logo-header a:active, .logo-header a:checked,
+.logo-header a:focus, .logo-header a:visited {
     text-decoration: none;
+    color: #386ce0; 
+}
+
+
+.logo-header:hover {
+    border: 2px #386ce0 solid;
+    color: #386ce0;
+}
+
+.logo-header-center {
+    left: -10px;
 }
 
 .sidebar-menu {
@@ -79,7 +96,7 @@ p a {
 }
 
 .sidebar-menu:hover {
-    color: #666;
+    color: #386ce0;
 }
 
 /* hero */
@@ -89,7 +106,7 @@ p a {
 .intro {
     background-color: #f0f2f3;
     margin-top: 60px; 
-    padding-top: 75px;
+    padding-top: 30px;
     padding-bottom: 0px;
 }
 
@@ -103,7 +120,7 @@ p a {
 }
 
 .intro-category {
-    margin-top: 20px !important;
+    margin-top: 80px !important;
 }
 
 .moto-big, h1 {
@@ -414,7 +431,7 @@ h3 > .thinner {
 
 .sidebar {
     background-color: rgb(255, 255, 255);
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0,0, 0, 0.6);
     height: 100%;
     left: -270px;
     line-height: 28px;
@@ -425,6 +442,10 @@ h3 > .thinner {
     width: 200px;
     z-index: 2000;
     display: none;
+}
+
+.phone-header {
+    /*color: rgba(56, 108, 224, 0.9);*/
 }
 
 .sidebar .extra-margin {
@@ -462,7 +483,7 @@ h3 > .thinner {
     top: 0px;
     vertical-align: baseline;
     width: 100%;
-    z-index: 1500;
+    z-index: 1850;
     display: none;
 }
 
@@ -561,8 +582,8 @@ h3 > .thinner {
 
 .myToastr {
     -webkit-box-shadow: rgb(153, 153, 153) 0px 0px 12px 0px;
-    background-color: rgb(47, 150, 180);
-    border-radius: 3px;
+    background-color: #386ce0;
+    border-radius: 0px;
     box-shadow: rgb(153, 153, 153) 0px 0px 12px 0px;
     color: rgb(255, 255, 255);
     display: none;
@@ -574,9 +595,9 @@ h3 > .thinner {
     padding: 15px 15px 15px 15px;
     position: fixed;
     top: 0px;
-    width: 96%;
-    margin-left: 2%;
-    z-index: 100;
+    width: 100%;
+    margin-left: 0%;
+    z-index: 1500;
     
     -webkit-animation-duration: 0.25s; /* Chrome, Safari, Opera */
     animation-duration: 0.25s;
@@ -586,8 +607,8 @@ h3 > .thinner {
 
 .page-neighbours-next {
     position: absolute;
-    left: 15px;
-    padding-right: 15px;
+    left: 30px;
+    padding-right: 30px;
     padding-bottom: 15px;
 }
 
@@ -601,8 +622,8 @@ h3 > .thinner {
 
 .page-neighbours-previous {
     position: absolute;
-    right: 15px;
-    padding-left: 15px;
+    right: 30px;
+    padding-left: 30px;
     padding-bottom: 15px;
 }
 

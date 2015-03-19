@@ -38,3 +38,7 @@
     </div>
 </div>
 @stop
+
+@section('additional-head-scripts')
+<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/images.js') }}"></script>
+@stop

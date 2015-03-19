@@ -27,6 +27,7 @@
                     <div class="veer-stats">
                         {{ array_get(app('veer')->statistics, 'loading') }}
                         {{ array_get(app('veer')->statistics, 'memory') }}
+                        {{ array_get(app('veer')->statistics, 'queries') }}
                     </div>
                 </small>
             </div>

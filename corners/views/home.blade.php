@@ -71,3 +71,7 @@
 <script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/skrollr-effects.js') }}"></script>
 @endif
 @stop
+
+@section('additional-head-scripts')
+<script src="{{ asset(config('veer.assets_path').'/'.$template.'/js/images.js') }}"></script>
+@stop

@@ -1,7 +1,12 @@
 $('.pagination-button').click(function(event) {
         event.preventDefault();
         
-        $('.show-more').addClass('animated').addClass('bounceOutDown');
+        var w = $('.show-more-wrapper').width();
+        $('.show-more').css('background-color', '#ccc');
+        $('.show-more-wrapper').animate({'padding-left': (w/2)-5, 'padding-right': (w/2)-5 }, 200);
+        $('.show-more').addClass('animated').addClass('bounceOut');
+        $('.show-more').html('&nbsp;');
+
         
         var currentPage = $(this).attr('data-page');        
         var insertDataDiv = '#showMoreData' + currentPage;
@@ -15,5 +20,5 @@ $('.pagination-button').click(function(event) {
                    $(insertDataDiv).html(results);                
                 },
             }); 
-        }, 300);
+        }, 500);
 });

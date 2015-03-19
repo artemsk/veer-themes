@@ -84,13 +84,3 @@ $('.social-button a').click(function(e) {
 if($('.corners-post-6-img').length > 0) { 
 $('.corners-post-6-img').css('min-height', $(window).height()); 
 }
-
-/*$('img').ready(function() {
-    $('img').css('opacity','0');
-    setTimeout(function() {
-         $('img').addClass('fade-corners').css('opacity','1');
-     },1);
-    setTimeout(function() {
-         $('img').removeClass('fade-corners');
-     },300);
-});*/

@@ -15,10 +15,7 @@
 @foreach($categories as $category)
 {{ $category->title }}, @endforeach
 @endif" />
-<meta property="article:tag"        content="@if(isset($categories) && count($categories)>0)
-@foreach($categories as $category)
-{{ $category->title }}, @endforeach
-@endif" />
+<meta property="article:tag"        content="{{ implode(',',$page->tags->lists('name')) }}" />
 <meta property="twitter:card"       content="summary_large_image" />
 <meta property="twitter:description" content="{{ strip_tags($page->small_txt) }}" />
 <meta property="twitter:domain"     content="{{ app('veer')->siteUrl }}" />
@@ -41,8 +38,8 @@
 
 @if(veer_get('event.neighbours.exists') == true)
 <div class="myToastr">
-    <div class="page-neighbours-previous"><a href="{{ route('page.show', veer_get('event.neighbours.previous.id')) }}" title="{{ veer_get('event.neighbours.previous.title') }}">{{ str_limit(veer_get('event.neighbours.previous.title'), 45) }}</a></div>
-    <div class="page-neighbours-next hidden-xs hidden-sm"><a href="{{ route('page.show', veer_get('event.neighbours.next.id')) }}" title="{{ veer_get('event.neighbours.next.title') }}">{{ str_limit(veer_get('event.neighbours.next.title'), 45) }}</a></div>
+    @if(veer_get('event.neighbours.previous.title') != null)<div class="page-neighbours-previous"><a href="{{ route('page.show', veer_get('event.neighbours.previous.url')) }}" title="{{ veer_get('event.neighbours.previous.title') }}">{{ str_limit(veer_get('event.neighbours.previous.title'), 45) }}</a> &rarr;</div>@endif
+    @if(veer_get('event.neighbours.next.title') != null)<div class="page-neighbours-next hidden-xs hidden-sm">&larr; <a href="{{ route('page.show', veer_get('event.neighbours.next.url')) }}" title="{{ veer_get('event.neighbours.next.title') }}">{{ str_limit(veer_get('event.neighbours.next.title'), 45) }}</a></div>@endif
 </div>
 @endif
 

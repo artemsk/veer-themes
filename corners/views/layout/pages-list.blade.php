@@ -1,3 +1,9 @@
+@if(isset($loadScripts))
+<script>
+    $.getScript("{{ asset(config('veer.assets_path').'/'.$template.'/js/images.js') }}");
+</script>
+@endif
+
 @foreach(veer_get('function.indexCornersPages.data.gridSort') as $row)
 <div class="row">
     @foreach($row as $key => $item)
@@ -12,8 +18,9 @@
 <div id="showMoreData{{ veer_get('function.indexCornersPages.data.items')->currentPage() }}">
     @if(veer_get('function.indexCornersPages.data.items')->hasMorePages())
     <div class="row bolshaya-content-row">
-        <div class="col-sm-6 col-sm-offset-9 col-xs-22 col-xs-offset-1 text-center show-more">
-            <a data-page="{{ veer_get('function.indexCornersPages.data.items')->currentPage() }}" class="pagination-button" href="{{ veer_get('function.indexCornersPages.data.items')->nextPageUrl() }}">More</a>
+        <div class="col-sm-6 col-sm-offset-9 col-xs-22 col-xs-offset-1 text-center show-more-wrapper"><div class="show-more">
+            <a data-page="{{ veer_get('function.indexCornersPages.data.items')->currentPage() }}" class="pagination-button" href="{{ veer_get('function.indexCornersPages.data.items')->nextPageUrl() }}">Больше</a>
+            </div>
         </div>
     </div>
     @endif

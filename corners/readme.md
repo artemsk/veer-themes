@@ -17,12 +17,15 @@ SITE_KEYWORDS
 SITE_DESCRIPTION
 SITE_FOOTER
 SITE_COUNTER
+CORNERS_HOME_ITEMS_NUMBER
+CORNERS_COMMENTS_SIDEBAR
+CORNERS_AD
 
 Default
 -------
-SITE_TITLE
-CATEGORY_HOME
-TEMPLATE
+SITE_TITLE*
+CATEGORY_HOME*
+TEMPLATE*
 
 Attributes
 ==========
@@ -35,4 +38,6 @@ titleColorPost
 imagePostFirst
 imagePostSecond
 imagePostHidden
+connectedPageBottom
+connectedPageTop
 (* - default)
