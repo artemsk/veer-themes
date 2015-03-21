@@ -22,6 +22,7 @@
         </div>
     </div>
 </div>
+
 @endif
 <span class="end-of-text-mark"></span>
 @if($page->show_comments)
@@ -29,6 +30,7 @@
 <div class="row">
     <div class="col-xs-24 col-sm-16">
         {{ veer_get('comments_disqus') }}
+        <div class="bolshaya-content-row"></div>
     </div>
     <div class="col-sm-8 hidden-xs text-right">
         {{ db_parameter('CORNERS_COMMENTS_SIDEBAR'); }}

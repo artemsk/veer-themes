@@ -84,3 +84,9 @@ $('.social-button a').click(function(e) {
 if($('.corners-post-6-img').length > 0) { 
 $('.corners-post-6-img').css('min-height', $(window).height()); 
 }
+
+/* 
+ * $('.image-modal').click(function() {
+   var src = $(this).find('img').attr('src');
+   $('#myModal .modal-body').html('<img src="' + src + '" class="img-responsive">');
+});*/

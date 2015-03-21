@@ -3,7 +3,7 @@
 @section('body')
 
 @if(db_parameter('HERO_ON_HOME', false))
-@include($template.'.layout.hero')
+@include($template.'.layout.hero-small')
 @else
 <div class="bolshaya-content-row"></div>
 @endif

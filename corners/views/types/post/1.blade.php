@@ -49,9 +49,7 @@
                         <div class="row">
                             <div class="col-sm-24">
                                 @foreach(veer_get('event.images') as $image)
-
                                 <img src="{{ asset(config('veer.images_path').'/'.$image->img) }}" class="corners-images">
-
                                 @endforeach
                             </div>
                         </div>
@@ -70,6 +68,7 @@
 
     </div>
 </div>
+
 <div class="corners-full-width-footer">
     <div class="container-fluid">
         @include($template . '.layout.footer')
