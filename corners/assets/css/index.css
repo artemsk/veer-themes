@@ -954,28 +954,6 @@ h3 > .thinner {
     width: 100%;
 }
 
-.image-modal {
-    //cursor: pointer;
-}
-
-.image-modal:hover {
-    
-}
-
-.image-modal-container {
-    min-height: 100px;
-}
-
-.modal .modal-body {
-    //max-height: 420px;
-   // overflow-y: scroll;
-}
-
-.btn-img {
-    padding: 0px;
-}
-
-
 .more-articles {
     border-top: 2px #efefef solid;
 }
