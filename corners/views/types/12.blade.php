@@ -1,5 +1,5 @@
 <div class="col-sm-24 col-md-12 corners-post-id-{{ $data->id }}">@include($template . '.layout.excerpt-big', array('position' => 't', 'connectedId' => data_get($data->params, 'connectedPageTop')))
-    <div class="bolshaya-content-row row corners-post-lists">
+    <div class="bolshaya-content-row-grid row corners-post-lists">
         <div class="col-sm-24">
             @if(isset($data->images) && count($data->images)>0)
             <a href="{{ route('page.show', $data->url) }}">

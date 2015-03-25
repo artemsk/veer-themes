@@ -5,7 +5,7 @@
 @if(db_parameter('HERO_ON_HOME', false))
 @include($template.'.layout.hero-small')
 @else
-<div class="bolshaya-content-row"></div>
+<div class="bolshaya-content-row-top"></div>
 @endif
 
 <div class="container-fluid bolshaya-main-content bolshaya-background-white">

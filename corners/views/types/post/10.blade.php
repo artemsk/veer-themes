@@ -52,6 +52,7 @@
     </div>
 @include($template.'.types.post.post-bottom')
 </div>
+<div class="bolshaya-content-row"></div>
 <div class="corners-full-width-footer">
     <div class="container-fluid">
         @include($template . '.layout.footer')

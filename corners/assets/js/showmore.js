@@ -22,3 +22,7 @@ $('.pagination-button').click(function(event) {
             }); 
         }, 500);
 });
+
+$('.show-more').click(function() {
+   $(this).find('a').click(); 
+});

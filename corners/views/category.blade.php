@@ -12,7 +12,7 @@
 @stop
 
 @section('body')
-<div class="container-fluid intro intro-category" data-top="transform:translate(0px,0px);" data-top-bottom="transform:translate(0px,-50px);">
+<div class="container-fluid intro intro-category">
     <div class="row bolshaya-overflow">
         <div class="col-sm-16 col-sm-offset-4 text-center">
             <span class="category-title">ТЕМА</span>

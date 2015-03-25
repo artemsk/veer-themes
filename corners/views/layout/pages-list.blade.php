@@ -4,7 +4,7 @@
 </script>
 @endif
 
-@foreach(veer_get('function.indexCornersPages.data.gridSort') as $row)
+@foreach(veer_get('function.indexCornersPages.data.gridSort', array()) as $row)
 <div class="row">
     @foreach($row as $key => $item)
     @if($key == 2)
@@ -15,6 +15,7 @@
     @endforeach
 </div>
 @endforeach
+@if(count(veer_get('function.indexCornersPages.data.gridSort'))>0)
 <div id="showMoreData{{ veer_get('function.indexCornersPages.data.items')->currentPage() }}">
     @if(veer_get('function.indexCornersPages.data.items')->hasMorePages())
     <div class="row bolshaya-content-row">
@@ -25,7 +26,7 @@
     </div>
     @endif
 </div>	
-
+@endif
 @if(isset($loadScripts))
 <script>
     $.getScript("{{ asset(config('veer.assets_path').'/'.$template.'/js/holder.js') }}");
