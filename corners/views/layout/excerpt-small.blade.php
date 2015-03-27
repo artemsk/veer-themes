@@ -1,5 +1,5 @@
 @if(!empty($connectedId) && null != (data_get($excerpts, $connectedId)))
-<div class="row bolshaya-content-row">
+<div class="row bolshaya-content-row-grid">
     <div class="col-xs-24">
         <div class="bolshaya-mini-img-block">
             @if(isset(data_get($excerpts, $connectedId)->images) && count(data_get($excerpts, $connectedId)->images)>0)
