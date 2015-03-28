@@ -9,17 +9,13 @@
                 @else
                 <img data-src="holder.js/75x75" class="img-circle type-7-image">
                 @endif
-                <h4><a href="{{ route('page.show', $data->url) }}">{{ $data->title or 'Title' }}</a></h4>
+                <h4 class="type-3-title"><a href="{{ route('page.show', $data->url) }}">{{ $data->title or 'Title' }}</a></h4>
                 <p>{{ $data->small_txt or 'Small Text' }}</p>
                 <small class="text-muted type-2-information">
                     <a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a>
-                    <strong>
-                        @if(isset($data->created_at))
-                        {{ \Carbon\Carbon::parse($data->created_at)->format("j F") }}
-                        @endif
-                    </strong>@if(isset($data->user))
-                    {{ $data->user->username or null }}
-                    @endif
+                    <strong class="type-2-information-date">
+            <i class="fa fa-dot-circle-o"></i> {{ $data->views }}
+        </strong>
                 </small>
             </div>
         </div>
