@@ -1,6 +1,8 @@
 <div class="col-sm-12 col-md-6 corners-post-id-{{ $data->id }}">@include($template . '.layout.excerpt-small', array('position' => 't', 'connectedId' => data_get($data->params, 'connectedPageTop')))<div class="corners-post-lists bolshaya-content-row-grid">
     <div class="type-9-text">
-        <div class="source"><a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a><span class="time">— @if(isset($data->created_at))
+        <div class="source"><a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a><strong class="type-2-information-date">
+            <i class="fa fa-dot-circle-o"></i> {{ $data->views }}
+        </strong><span class="time">— @if(isset($data->created_at))
                 {{ \Carbon\Carbon::parse($data->created_at)->format("j F") }}
                 @endif</span>
         </div>

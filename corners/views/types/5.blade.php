@@ -10,7 +10,9 @@
             @endif
             </div>
             <span class="type-5-category">
-                <a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a> <a href="{{ route('category.show', data_get($data, 'categories.1.id')) }}">{{ data_get($data, 'categories.1.title') }}</a>
+                <a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a> <a href="{{ route('category.show', data_get($data, 'categories.1.id')) }}">{{ data_get($data, 'categories.1.title') }}</a><strong class="type-2-information-date">
+            <i class="fa fa-dot-circle-o"></i> {{ $data->views }}
+        </strong>
             </span>
             <h3 class="type-5-title"><a href="{{ route('page.show', $data->url) }}">{{ $data->title or 'Title' }}</a></h3>
         </div>

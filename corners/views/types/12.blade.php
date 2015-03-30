@@ -11,7 +11,9 @@
             </div>
             <div class="type-12-text text-center" style="color: {{ data_get($data, 'params.titleColor', 'auto') }};">
                 <div class="type-6-category">
-                    <a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a> <a href="{{ route('category.show', data_get($data, 'categories.1.id')) }}">{{ data_get($data, 'categories.1.title') }}</a>
+                    <a href="{{ route('category.show', data_get($data, 'categories.0.id')) }}">{{ data_get($data, 'categories.0.title') }}</a> <a href="{{ route('category.show', data_get($data, 'categories.1.id')) }}">{{ data_get($data, 'categories.1.title') }}</a><strong class="type-2-information-date">
+            <i class="fa fa-dot-circle-o"></i> {{ $data->views }}
+        </strong>
                 </div>
                 <h2 class="type-6-title"><a href="{{ route('page.show', $data->url) }}">{{ $data->title or 'Title' }}</a></h2>
             </div>

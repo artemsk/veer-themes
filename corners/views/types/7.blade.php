@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-6 corners-post-id-{{ $data->id }}">
-    @include($template . '.layout.excerpt-small', array('position' => 't', 'connectedId' => data_get($data->params, 'connectedPageTop')))<div class="corners-post-lists bolshaya-content-row-grid row">
+    @include($template . '.layout.excerpt-small', array('position' => 't', 'connectedId' => data_get($data->params, 'connectedPageTop')))<div class="corners-post-lists bolshaya-content-row-grid row type-7-block">
         <div class="col-sm-24">
             <div class="type-7-text text-center" @if(isset($data->params['bgColor'])) style="background-color: {{ $data->params['bgColor'] }}" @endif>
                  @if(isset($data->images) && count($data->images)>0)
