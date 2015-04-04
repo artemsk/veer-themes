@@ -1153,3 +1153,18 @@ h3 > .thinner {
     max-width: 75px !important;
     max-height: 75px !important;
 }
+
+.best-of-imgs {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    max-width: 150px !important;
+    display: table-cell;
+}
+
+.best-of-txts {
+    display: table-cell;
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 25px;
+}
