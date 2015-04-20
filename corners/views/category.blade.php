@@ -12,7 +12,7 @@
 @stop
 
 @section('body')
-<div class="container-fluid intro intro-category">
+<div class="container-fluid intro intro-category" @if(isset($category->images) && count($category->images)>0)style="background-image:url({{ asset(config('veer.images_path').'/'.$category->images[0]->img) }})@endif">
     <div class="row bolshaya-overflow">
         <div class="col-sm-16 col-sm-offset-4 text-center">
             <span class="category-title">ТЕМА</span>
